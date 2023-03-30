@@ -6,3 +6,5 @@ git config --global user.email "karmazinenko78@school91.org.ua"
 git status
 git init
 git add .
+git commit -m "first git"
+git log
