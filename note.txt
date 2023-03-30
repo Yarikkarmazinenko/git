@@ -1,0 +1,8 @@
+git --version
+git config --list
+git config --global user.name "Yarikkarmazinenko"
+git config --global user.email "karmazinenko78@school91.org.ua"
+*************************************************
+git status
+git init
+git add .

@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+
+{% block base %}
+<h1>Contact us</h1>
+<a class="footer-top__email" href="mailto: karmazinenko78@school91.org.ua">My email karmazinenko78@school91.org.ua</a>
+<br> <br>
+<a class="footer-top__phone" href="tel:+3800970128778">My tel: +3800970128778</a>
+<form action="/contact_show" method="post">
+    <h3>Name</h3>
+    <input type="text" name="name" placeholder="Name">
+    <h3>Text</h3>
+    <input type="text" name="text" placeholder="Text">
+    <br> <br>
+    <button type="submit">Send us</button>
+</form>
+{% endblock %}

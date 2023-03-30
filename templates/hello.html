@@ -1,0 +1,8 @@
+{%extends 'base.html'%}
+
+
+{% block base %}
+<h1>I am from Hello</h1>
+<h3>I like cat</h3>
+<img src="{{ url_for('static', filename = 'images/cat.jpg') }}" alt="">
+{% endblock %}
