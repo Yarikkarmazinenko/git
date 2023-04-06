@@ -1,4 +1,5 @@
 import json
+import csv
 
 from flask import Flask, render_template, request
 
@@ -41,9 +42,23 @@ def contact_show():
         "text": text,
     }
     print(info)
-    with open("database/info.json","w") as file:
+    with open("database/info.json","a") as file:
         json.dump(info,file)
-    return render_template("contact_show.html",name=name, text=text)
+    with open("database/file.csv", "a+") as f:
+        for k,v in info.items():
+            s = f"{k},{v}\n"
+            f.write(s)
+        # f.write(info["name"])
+        # f.write(info["text"])
+        f.seek(0)
+        reader = csv.reader(f)
+        show_list = []
+        for row in reader:
+            show = ",".join(row)
+            show_list.append(show)
+            print(show)
+
+    return render_template("contact_show.html",name=name, text=text,show=show_list)
 
 
 @app.route("/dog/<dog_name>/<int:year>")
